@@ -4,11 +4,11 @@ import { render } from 'react-dom';
 
 const nombres = [
   'Jeisson',
-  'Fernando',
+  'Jeisson',
   'Santiesteban',
   'Mendivelso'
 ]
-function getNombres(){
+/*function getNombres(){
     let elementosLista = [];
 
     for(var i=0; i< nombres.length;i++){
@@ -16,10 +16,10 @@ function getNombres(){
     }
     console.log(elementosLista);
     return elementosLista;
-}
+}*/
 
 const Nombres = () => {
-  return <ul>{ nombres.map( nombre =>  <li>{nombre}</li> ) }</ul>
+  return <ul>{ nombres.map( (nombre,index) =>  <li key={index}>{nombre}</li> ) }</ul>
 }
 
 const App = () => {
