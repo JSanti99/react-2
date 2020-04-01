@@ -1,26 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
 
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );
-  }
+const nombres = [
+  'Jeisson',
+  'Fernando',
+  'Santiesteban',
+  'Mendivelso'
+]
+function getNombres(){
+    let elementosLista = [];
+
+    for(var i=0; i< nombres.length;i++){
+      elementosLista.push(<li key={i}>{nombres[i]}</li>);
+    }
+    console.log(elementosLista);
+    return elementosLista;
+}
+
+const Nombres = () => {
+  return <ul>{ nombres.map( nombre =>  <li>{nombre}</li> ) }</ul>
+}
+
+const App = () => {
+  return <div><Nombres /></div>
 }
 
 render(<App />, document.getElementById('root'));
